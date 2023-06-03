@@ -54,11 +54,11 @@ You should see ThingsBoard login page.
 
 Use the following default credentials:
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+- **System Administrator**: admin@elansol.com / elansolrelier
 
 If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
 
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **Tenant Administrator**: tenant@elansol.com / tenantrelier
 - **Customer User**: customer@thingsboard.org / customer
 
 In case of any issues you can examine service logs for errors.

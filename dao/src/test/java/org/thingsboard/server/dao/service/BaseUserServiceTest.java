@@ -56,7 +56,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
         User tenantAdmin = new User();
         tenantAdmin.setAuthority(Authority.TENANT_ADMIN);
         tenantAdmin.setTenantId(tenantId);
-        tenantAdmin.setEmail("tenant@thingsboard.org");
+        tenantAdmin.setEmail("tenant@elansol.com");                 //"tenant@thingsboard.org");
         userService.saveUser(tenantAdmin);
 
         Customer customer = new Customer();
@@ -76,10 +76,10 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testFindUserByEmail() {
-        User user = userService.findUserByEmail(SYSTEM_TENANT_ID, "sysadmin@thingsboard.org");
+        User user = userService.findUserByEmail(SYSTEM_TENANT_ID, "admin@elansol.com");     //"sysadmin@thingsboard.org");
         Assert.assertNotNull(user);
         Assert.assertEquals(Authority.SYS_ADMIN, user.getAuthority());
-        user = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        user = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         Assert.assertNotNull(user);
         Assert.assertEquals(Authority.TENANT_ADMIN, user.getAuthority());
         user = userService.findUserByEmail(tenantId, "customer@thingsboard.org");
@@ -91,7 +91,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testFindUserById() {
-        User user = userService.findUserByEmail(SYSTEM_TENANT_ID, "sysadmin@thingsboard.org");
+        User user = userService.findUserByEmail(SYSTEM_TENANT_ID,  "admin@elansol.com");    //"sysadmin@thingsboard.org");
         Assert.assertNotNull(user);
         User foundUser = userService.findUserById(SYSTEM_TENANT_ID, user.getId());
         Assert.assertNotNull(foundUser);
@@ -100,7 +100,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testFindUserCredentials() {
-        User user = userService.findUserByEmail(SYSTEM_TENANT_ID,"sysadmin@thingsboard.org");
+        User user = userService.findUserByEmail(SYSTEM_TENANT_ID, "admin@elansol.com");     //"sysadmin@thingsboard.org");
         Assert.assertNotNull(user);
         UserCredentials userCredentials = userService.findUserCredentialsByUserId(SYSTEM_TENANT_ID, user.getId());
         Assert.assertNotNull(userCredentials);
@@ -108,7 +108,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testSaveUser() {
-        User tenantAdminUser = userService.findUserByEmail(SYSTEM_TENANT_ID,"tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(SYSTEM_TENANT_ID,"tenant@elansol.com");                 //"tenant@thingsboard.org");
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
         user.setTenantId(tenantAdminUser.getTenantId());
@@ -139,7 +139,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testSaveUserWithSameEmail() {
-        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         tenantAdminUser.setEmail("sysadmin@thingsboard.org");
         Assertions.assertThrows(DataValidationException.class, () -> {
             userService.saveUser(tenantAdminUser);
@@ -148,7 +148,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testSaveUserWithInvalidEmail() {
-        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         tenantAdminUser.setEmail("tenant_thingsboard.org");
         Assertions.assertThrows(DataValidationException.class, () -> {
             userService.saveUser(tenantAdminUser);
@@ -157,7 +157,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testSaveUserWithEmptyEmail() {
-        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         tenantAdminUser.setEmail(null);
         Assertions.assertThrows(DataValidationException.class, () -> {
             userService.saveUser(tenantAdminUser);
@@ -166,7 +166,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testSaveUserWithoutTenant() {
-        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         tenantAdminUser.setTenantId(null);
         Assertions.assertThrows(DataValidationException.class, () -> {
             userService.saveUser(tenantAdminUser);
@@ -175,7 +175,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testDeleteUser() {
-        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
         user.setTenantId(tenantAdminUser.getTenantId());
@@ -196,7 +196,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
 
     @Test
     public void testFindTenantAdmins() {
-        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@thingsboard.org");
+        User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
         PageData<User> pageData = userService.findTenantAdmins(tenantAdminUser.getTenantId(), new PageLink(10));
         Assert.assertFalse(pageData.hasNext());
         List<User> users = pageData.getData();

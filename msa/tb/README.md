@@ -52,8 +52,8 @@ Where:
 After executing `docker run` command you can open `http://{your-host-ip}:9090` in you browser (for ex. `http://localhost:9090`). You should see ThingsBoard login page.
 Use the following default credentials:
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **System Administrator**: admin@elansol.com / elansolrelier
+- **Tenant Administrator**: tenant@elansol.com / tenantrelier
 - **Customer User**: customer@thingsboard.org / customer
     
 You can always change passwords for each account in account profile page.

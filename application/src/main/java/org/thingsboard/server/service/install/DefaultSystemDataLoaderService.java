@@ -204,7 +204,8 @@ public class DefaultSystemDataLoaderService implements SystemDataLoaderService {
 
     @Override
     public void createSysAdmin() {
-        createUser(Authority.SYS_ADMIN, null, null, "sysadmin@thingsboard.org", "sysadmin");
+//         createUser(Authority.SYS_ADMIN, null, null, "sysadmin@thingsboard.org", "sysadmin");
+           createUser(Authority.SYS_ADMIN, null, null, "admin@elansol.com", "elansolrelier");   
     }
 
     @Override
@@ -301,7 +302,8 @@ public class DefaultSystemDataLoaderService implements SystemDataLoaderService {
         demoTenant.setTitle("Tenant");
         demoTenant = tenantService.saveTenant(demoTenant);
         installScripts.loadDemoRuleChains(demoTenant.getId());
-        createUser(Authority.TENANT_ADMIN, demoTenant.getId(), null, "tenant@thingsboard.org", "tenant");
+//         createUser(Authority.TENANT_ADMIN, demoTenant.getId(), null, "tenant@thingsboard.org", "tenant");
+        createUser(Authority.TENANT_ADMIN, demoTenant.getId(), null, "tenant@elansol.com", "tenantrelier");
 
         Customer customerA = new Customer();
         customerA.setTenantId(demoTenant.getId());

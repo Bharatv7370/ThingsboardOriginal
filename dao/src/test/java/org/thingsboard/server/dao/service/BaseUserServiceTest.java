@@ -140,7 +140,7 @@ public abstract class BaseUserServiceTest extends AbstractServiceTest {
     @Test
     public void testSaveUserWithSameEmail() {
         User tenantAdminUser = userService.findUserByEmail(tenantId, "tenant@elansol.com");                 //"tenant@thingsboard.org");
-        tenantAdminUser.setEmail("sysadmin@thingsboard.org");
+        tenantAdminUser.setEmail("admin@elansol.com");                                                      //"sysadmin@thingsboard.org");
         Assertions.assertThrows(DataValidationException.class, () -> {
             userService.saveUser(tenantAdminUser);
         });

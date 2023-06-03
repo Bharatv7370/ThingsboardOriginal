@@ -1,9 +1,3 @@
-<style>
-  body {
-    background-color: #f5f5f5;
-  }
-</style>
-
 ![Logo](https://elansoltech.com/wp-content/uploads/2023/02/Elansol-300x92.png)
 
 ## Docker IMAGE Build - Linux

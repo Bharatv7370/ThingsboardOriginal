@@ -23,7 +23,7 @@
     <version>3.5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Thingsboard</name>
+    <name>Elansol</name>
     <url>https://www.elansoltech.com</url>
     <inceptionYear>2016</inceptionYear>
 

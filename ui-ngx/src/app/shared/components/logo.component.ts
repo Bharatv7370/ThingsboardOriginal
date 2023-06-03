@@ -26,7 +26,8 @@ export class LogoComponent {
   logo = 'assets/logo_title_white.svg';
 
   gotoThingsboard(): void {
-    window.open('https://thingsboard.io', '_blank');
+      window.open('https://www.elansoltech.com', '_blank');  
+//    window.open('https://thingsboard.io', '_blank');
   }
 
 }

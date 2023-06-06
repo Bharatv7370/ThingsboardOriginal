@@ -4,9 +4,11 @@
 
 This guide will help you to download and build ThingsBoard from sources
 
+
 ## Authors
 
 - [Elansol Technologies](https://www.elansoltech.com)
+
 
 ## Pre Requisites
 
@@ -35,15 +37,16 @@ Expected command output is:
     OpenJDK Runtime Environment (...)
     OpenJDK 64-Bit Server VM (build ...)
 
- 
 **Maven**
 ThingsBoard build requires Maven 3.1.0+.
 
     $ sudo apt-get install maven
 
 Please note that maven installation may set Java 7 as a default JVM on certain Linux machines. Use java installation instructions to fix this.
-    
-**Installation**
+
+
+## 
+## Installation
 
 You can clone source code of the project from the [official github repo](https://github.com/Bharatv7370/ThingsboardOriginal.git)
 
@@ -70,7 +73,6 @@ Update the apt package index:
 Install Docker Engine, containerd, and Docker Compose.
 
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 
 Set up the repository
 
@@ -119,8 +121,7 @@ This command downloads a test image and runs it in a container. When the contain
 Once Docker is Engine is Installed & managed as a non-root user.
 
     mvn clean install -DskipTests -Ddockerfile.skip=false
-    
-    
+     
 **Create docker compose file for ThingsBoard queue service**
 
     nano docker-compose.yml

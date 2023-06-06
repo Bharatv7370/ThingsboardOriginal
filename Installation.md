@@ -155,11 +155,14 @@ PORT's Explanation (No need to take any action):
     restart: always - automatically start ThingsBoard in case of system reboot and restart in case of failure.
     image: thingsboard/tb-postgres - docker image, can be also thingsboard/tb-cassandra or thingsboard/tb
 
-For Saving the *.yml File execue the following Commands
+For Saving the *.yml file execue the following Commands
 
     Press "CTRL + O"
+    
     Once you see the file name as docker-compose.yml after pressing the above keys
+    
     Press "Enter"
+    
     Press "CTRL + X"
 
 Run following commands, before starting docker container(s), to create folders for storing data and logs. 

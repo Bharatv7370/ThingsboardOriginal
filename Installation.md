@@ -48,11 +48,11 @@ Please note that maven installation may set Java 7 as a default JVM on certain L
 ## 
 ## Installation
 
-You can clone source code of the project from the [official github repo](https://github.com/Bharatv7370/ThingsboardOriginal.git)
+You can clone source code of the project from the [official github repo](https://github.com/Bharatv7370/ThingsboardOriginal.git),
+checkout latest release branch
 
-    # checkout latest release branch
     git clone https://github.com/Bharatv7370/ThingsboardOriginal.git
-    cd thingsboard
+    cd ThingsboardOriginal
 
 **Image Build from Source File**
 

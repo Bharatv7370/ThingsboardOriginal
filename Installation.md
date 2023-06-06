@@ -14,17 +14,36 @@ Required tools
 
 This section contains installation instructions for build tools.
 
--Java
- ThingsBoard is build using Java 11. You can use [follow instruction](https://thingsboard.io/docs/user-guide/install/ubuntu/) to install Java 11.
+**Java**
 
--Maven
+ ThingsBoard is build using Java 11. You can use [follow instruction](https://thingsboard.io/docs/user-guide/install/ubuntu/) to install Java 11.
+ 
+    sudo apt update
+    sudo apt install openjdk-11-jdk
+
+Please don’t forget to configure your operating system to use OpenJDK 11 by default. You can configure which version is the default using the following command:
+
+    sudo update-alternatives --config java
+
+You can check the installation using the following command:
+
+    java -version
+
+Expected command output is:
+
+    openjdk version "11.0.xx"
+    OpenJDK Runtime Environment (...)
+    OpenJDK 64-Bit Server VM (build ...)
+
+ 
+**Maven**
 ThingsBoard build requires Maven 3.1.0+.
 
     $ sudo apt-get install maven
 
 Please note that maven installation may set Java 7 as a default JVM on certain Linux machines. Use java installation instructions to fix this.
     
-## Installation
+**Installation**
 
 You can clone source code of the project from the [official github repo](https://github.com/Bharatv7370/ThingsboardOriginal.git)
 
@@ -32,7 +51,7 @@ You can clone source code of the project from the [official github repo](https:/
     git clone https://github.com/Bharatv7370/ThingsboardOriginal.git
     cd thingsboard
 
-Build
+**Image Build from Source File**
 
 Run the following command from the thingsboard folder to build the project:
 

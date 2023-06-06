@@ -1,6 +1,6 @@
 ![Logo](https://elansoltech.com/wp-content/uploads/2023/02/Elansol-300x92.png)
 
-## Docker IMAGE Build - Linux
+## Docker IMAGE Build from Source on Linux Ubuntu (v22.04.2 LTS)
 
 This guide will help you to download and build ThingsBoard from sources
 

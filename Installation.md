@@ -106,42 +106,35 @@ Once Docker is Engine is Installed & managed as a non-root user.
 
     nano docker-compose.yml
 
-copy the following lines (110 - 124) to the yml file:
+copy the following lines to the newly open editor file:
 
-version: '3.0'
-services:
-  mytb:
-    restart: always
-    image: "thingsboard/tb-postgres"
-    ports:
-      - "8080:9090"
-      - "1883:1883"
-      - "7070:7070"
-      - "5683-5688:5683-5688/udp"
-    environment:
-      TB_QUEUE_TYPE: in-memory
-    volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs:/var/log/thingsboard
+    version: '3.0'
+     services:
+     mytb:
+     restart: always
+     image: "thingsboard/tb-postgres"
+     ports:
+       - "8080:9090"
+       - "1883:1883"
+       - "7070:7070"
+       - "5683-5688:5683-5688/udp"
+     environment:
+       TB_QUEUE_TYPE: in-memory
+     volumes:
+       - ~/.mytb-data:/data
+       - ~/.mytb-logs:/var/log/thingsboard
 
-Where:
+PORT's Explanation (No need to take any action):
 
- 8080:9090 - connect local port 8080 to exposed internal HTTP port 9090
- 1883:1883 - connect local port 1883 to exposed internal MQTT port 1883
-
-7070:7070 - connect local port 7070 to exposed internal Edge RPC port 7070
-
-5683-5688:5683-5688/udp - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
-
-~/.mytb-data:/data - mounts the host’s dir ~/.mytb-data to ThingsBoard DataBase data directory
-
-~/.mytb-logs:/var/log/thingsboard - mounts the host’s dir ~/.mytb-logs to ThingsBoard logs directory
-
-mytb - friendly local name of this machine
-
-restart: always - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-
-image: thingsboard/tb-postgres - docker image, can be also thingsboard/tb-cassandra or thingsboard/tb
+    8080:9090 - connect local port 8080 to exposed internal HTTP port 9090
+    1883:1883 - connect local port 1883 to exposed internal MQTT port 1883
+    7070:7070 - connect local port 7070 to exposed internal Edge RPC port 7070
+    5683-5688:5683-5688/udp - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
+    ~/.mytb-data:/data - mounts the host’s dir ~/.mytb-data to ThingsBoard DataBase data directory
+    ~/.mytb-logs:/var/log/thingsboard - mounts the host’s dir ~/.mytb-logs to ThingsBoard logs directory
+    mytb - friendly local name of this machine
+    restart: always - automatically start ThingsBoard in case of system reboot and restart in case of failure.
+    image: thingsboard/tb-postgres - docker image, can be also thingsboard/tb-cassandra or thingsboard/tb
 
 For Saving the *.yml File execue the following Commands
 
@@ -150,7 +143,9 @@ For Saving the *.yml File execue the following Commands
     Press "Enter"
     Press "CTRL + X"
 
-Run following commands, before starting docker container(s), to create folders for storing data and logs. These commands additionally will change owner of newly created folders to docker container user. To do this (to change user) chown command is used, and this command requires sudo permissions (command will request password for a sudo access):
+Run following commands, before starting docker container(s), to create folders for storing data and logs. 
+These commands additionally will change owner of newly created folders to docker container user. 
+To do this (to change user) chown command is used, and this command requires sudo permissions (command will request password for a sudo access):
 
     mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
     mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
@@ -171,4 +166,3 @@ After executing this command you can open http://{your-host-ip}:8080 in your bro
     Customer User: customer@thingsboard.org / customer
 
 You can always change passwords for each account in account profile page.
- 
